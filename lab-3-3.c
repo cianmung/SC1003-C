@@ -27,8 +27,8 @@ int main()
         {
         case 1:
             printf("Enter the matrix (3x3): \n");
-            for(i=0;i<SIZE;i++)
-                for(j=0;j<SIZE;j++)
+            for(i=0; i<SIZE; i++)
+                for(j=0; j<SIZE; j++)
                     scanf("%d", &array[i][j]);
             break;
         case 2:
@@ -49,7 +49,8 @@ int main()
             display(array);
             break;
         }
-    } while(choice < 5);
+    }
+    while(choice < 5);
 
     return 0;
 }
@@ -70,22 +71,28 @@ void swap2Rows(int ar[][SIZE], int r1, int r2)
     int tempAr[SIZE][SIZE];
     int i,j;
 
-    for(i=0;i<SIZE;i++)
+    for(i=0; i<SIZE; i++)
     {
-        for(j=0;j<SIZE;j++){
-            if(i == r1){
+        for(j=0; j<SIZE; j++)
+        {
+            if(i == r1)
+            {
                 tempAr[r2][j] = ar[r1][j];
-            } else if(i == r2) {
+            }
+            else if(i == r2)
+            {
                 tempAr[r1][j] = ar[r2][j];
-            } else {
+            }
+            else
+            {
                 tempAr[i][j] = ar[i][j];
             }
         }
 
     }
 
-    for(i=0;i<SIZE;i++)
-        for(j=0;j<SIZE;j++)
+    for(i=0; i<SIZE; i++)
+        for(j=0; j<SIZE; j++)
             ar[i][j] = tempAr[i][j];
 
 }
@@ -95,19 +102,26 @@ void swap2Cols(int ar[][SIZE], int c1, int c2)
     int tempAr[SIZE][SIZE];
     int i,j;
 
-    for (i=0;i<SIZE;i++) {
-        for (j=0;j<SIZE;j++){
-            if(j == c1) {
+    for (i=0; i<SIZE; i++)
+    {
+        for (j=0; j<SIZE; j++)
+        {
+            if(j == c1)
+            {
                 tempAr[i][c2] = ar[i][c1];
-            } else if(j == c2) {
+            }
+            else if(j == c2)
+            {
                 tempAr[i][c1] = ar[i][c2];
-            } else {
+            }
+            else
+            {
                 tempAr[i][j] = ar[i][j];
             }
         }
     }
 
-    for(i=0;i<SIZE;i++)
-        for(j=0;j<SIZE;j++)
+    for(i=0; i<SIZE; i++)
+        for(j=0; j<SIZE; j++)
             ar[i][j] = tempAr[i][j];
 }
